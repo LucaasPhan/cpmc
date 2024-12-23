@@ -5,7 +5,7 @@ import Anchor from "./_components/Anchor";
 const Navbar = () => {
     return (
         <header className="fixed top-0 w-full z-[100] bg-background shadow-xl">
-            <nav className="flex flex-row items-center container justify-between py-2 gap-3 relative">
+            <nav className="flex items-center container justify-between py-2 gap-3 relative">
                 <div className="flex justify-center items-center w-full py-2">
                     <Link href="/" passHref>
                         <Image className="mr-3"
