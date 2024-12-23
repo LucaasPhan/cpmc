@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <title>Trang chủ</title>
       <Navbar/>
-      <div className="flex flex-col items-center px-[260px]"> 
+      <div className="flex flex-col items-center px-[20%]"> 
         <Title/>
         <Introduction/>
       </div>
