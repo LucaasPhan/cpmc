@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { ReactNode } from "react";
-// import React, {ReactNode, useState} from "react";
+import Anchor from "./_components/Anchor";
 
-const Navbar = ({children}: {children: ReactNode}) => {
+const Navbar = () => {
     return (
-        <header className="fixed top-0 w-full z-[100] bg-background/95 shadow-xl">
+        <header className="fixed top-0 w-full z-[100] bg-background shadow-xl">
             <nav className="flex flex-row items-center container justify-between py-2 gap-3 relative">
                 <div className="flex justify-center items-center w-full">
                     <Link href="/">
@@ -16,14 +15,25 @@ const Navbar = ({children}: {children: ReactNode}) => {
                             alt="CPMC logo"
                         />
                     </Link>
-                    <Link href="/"><span className="font-semibold text-xl tracking-tight text-white">Central Park Media Crew</span></Link>
+                    <Link href="/"><span className="font-semibold text-xl tracking-tight text-white ">Central Park Media Crew</span></Link>
                 </div>
                 <div className="flex items-center flex-shrink-0 text-white mr-4">
-                    {React.Children.map(children, (child) => (
-                        <div className="hover:text-purple-300 font-semibold">
-                            {child}
-                        </div>
-                    ))}
+                    <Anchor
+                        href="/about"
+                        text="Về chúng mình"
+                    />
+                    <Anchor
+                        href="/gallery"
+                        text="Thư viện ảnh"
+                    />
+                    <Anchor
+                        href="/workshop"
+                        text="Workshop"
+                    />
+                    <Anchor
+                        href="/apply"
+                        text="Apply"
+                    />
                 </div>
             </nav>
         </header>

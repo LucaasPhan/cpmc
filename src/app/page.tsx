@@ -1,29 +1,17 @@
 "use client";
 import Navbar from "@/components/navbar";
-import Anchor from "./_components/Anchor";
+import Introduction from "./_components/introduction";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <>
       <title>Trang Chủ</title>
-      <Navbar>
-          <Anchor
-            href="#"
-            text="Home"
-          />
-          <Anchor
-            href="#"
-            text="About"
-          />
-          <Anchor
-            href="#"
-            text="CPMC?"
-          />
-          <Anchor
-            href="#"
-            text="Skibidi"
-          />
-      </Navbar>
+      <Navbar/>
+      <div className="flex flex-col items-center"> 
+        <Introduction/>
+      </div>
+      <Footer/>
     </>
   );
 };
