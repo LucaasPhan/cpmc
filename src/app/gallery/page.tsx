@@ -1,10 +1,12 @@
+"use client";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 const Apply = () => {
     return (
         <>
-            <title>Apply</title>
+            <title>Thư viện ảnh</title>
             <Navbar/>
             <div className="relative flex items-center justify-around flex-col sm:flex-row pt-16 h-[100vh]">
                 <div className="flex flex-col gap-7 order-1 sm:order-[0] items-center align-middle">
@@ -14,6 +16,7 @@ const Apply = () => {
                     </Link>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

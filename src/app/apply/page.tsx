@@ -1,5 +1,7 @@
+"use client";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 const Apply = () => {
     return (
@@ -14,6 +16,7 @@ const Apply = () => {
                     </Link>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }
