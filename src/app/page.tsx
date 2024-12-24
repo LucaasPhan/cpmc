@@ -1,12 +1,8 @@
+"use client";
 import Navbar from "@/components/navbar";
 import Title from "./_components/title";
 import Introduction from "./_components/introduction";
 import Footer from "@/components/footer";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "",
-};
 
 export default function Home() {
   return (
