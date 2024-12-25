@@ -1,7 +1,7 @@
 "use client";
 import Navbar from "@/components/navbar";
-import Title from "./components/title";
-import Introduction from "./components/introduction";
+import Title from "./_components/title";
+import Introduction from "./_components/introduction";
 import Footer from "@/components/footer";
 
 export default function Home() {
