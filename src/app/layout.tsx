@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Roboto } from 'next/font/google';
 import "@/app/globals.css";
 
@@ -10,11 +9,6 @@ const geistMono = Roboto({
   weight: '400',
 });
 
-export const metadata: Metadata = {
-  title: "CPMC",
-  description: "Central Park Media Crew",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head/>
       <body className={`${geistSans} ${geistMono} antialiased font-sans`}>
         {children}
       </body>

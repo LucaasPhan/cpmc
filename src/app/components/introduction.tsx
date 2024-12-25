@@ -16,7 +16,7 @@ const Introduction = () => {
                 width={300}
                 height={300}
                 alt="test"
-                className='w-auto h-auto rounded-xl'></Image>
+                className='w-auto h-auto rounded-xl '></Image>
             </div>
             </div>
         </section>

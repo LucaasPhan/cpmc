@@ -9,10 +9,10 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
 
     return (
-        <header className="fixed top-0 w-full z-[100] bg-background shadow-xl">
+        <header className="fixed top-0 w-full z-[1000] bg-background shadow-xl">
             <nav className="flex items-center justify-between py-2 gap-3 relative lg:px-[20%] max-lg:px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
-                    <Link href="/" passHref>
+                    <Link href="/">
                         <Image className="mr-3 max-lg:w-[40px] max-lg:h-auto"
                             src="/favicon_nobg.png"
                             width={50}
@@ -20,7 +20,7 @@ const Navbar = () => {
                             alt="CPMC logo"
                         />
                     </Link>
-                    <Link href="/" passHref><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
+                    <Link href="/"><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
                 </div>
                 <div className="flex items-center flex-shrink-0 text-color max-xl:hidden">
                     <Anchor
@@ -48,6 +48,28 @@ const Navbar = () => {
                     )
                     }
                 </div>
+                {toggle && (
+                    <div className="xl:hidden absolute top-[60px] left-0 w-full bg-background animate-open-menu z-[999]">
+                        <div className="px-2 pb-2 space-y-1 text-right">
+                        <Anchor
+                           href="/about"
+                           text="Về chúng mình"
+                        />
+                        <Anchor
+                           href="/gallery"
+                            text="Thư viện ảnh"
+                        />
+                        <Anchor 
+                           href="/workshop"
+                           text="Workshop"
+                        />
+                        <Anchor
+                           href="/apply"
+                            text="Apply"
+                        />
+                        </div>
+                    </div>
+                )}
             </nav>
         </header>
     );

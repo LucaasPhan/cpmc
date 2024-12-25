@@ -12,6 +12,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        'open-menu': {
+          '0%': { translate: '0px -150px'},
+          '100%': { translate: '0px 0px'}
+        }
+      },
+      animation: {
+        'open-menu': 'open-menu 0.5s ease-in-out',
+      }
     },
   },
   plugins: [],
