@@ -14,12 +14,17 @@ export default {
       },
       keyframes: {
         'open-menu': {
-          '0%': { translate: '0px -150px'},
+          '0%': { translate: '-150px 0px'},
           '100%': { translate: '0px 0px'}
-        }
+        },
+        'fade': {
+          '0%': { opacity: '0'},
+          '100%': { opacity: '1' }
+        },
       },
       animation: {
-        'open-menu': 'open-menu 0.5s ease-in-out',
+        'open-menu': 'open-menu ease-in-out',
+        'fade': 'fade ease-in-out'
       }
     },
   },

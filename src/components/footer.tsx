@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 const Footer = () => {
     return (
       <footer className="bg-[#010101] text-color justify-evenly block w-full">
-        <div className="flex flex-row items-center justify-between py-2 gap-3 flex-wrap px-[25vw]">
+        <div className="flex flex-row items-center justify-between py-2 gap-3 px-[25vw]">
           <div className="flex justify-center items-center py-2 mr-10 text-sm">
             <p>© 2024 Central Park Media Crew</p>
           </div>

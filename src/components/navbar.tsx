@@ -22,7 +22,7 @@ const Navbar = () => {
                     </Link>
                     <Link href="/"><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
                 </div>
-                <div className="flex items-center flex-shrink-0 text-color max-xl:hidden">
+                <div className="flex items-center flex-shrink-0 text-color max-xl:hidden gap-2">
                     <Anchor
                         href="/about"
                         text="Về chúng mình"
@@ -49,20 +49,26 @@ const Navbar = () => {
                     }
                 </div>
                 {toggle && (
-                    <div className="xl:hidden absolute top-[60px] left-0 w-full bg-background animate-open-menu z-[999]">
-                        <div className="px-2 pb-2 space-y-1 text-right">
+                    <div className="xl:hidden absolute top-[60px] left-0 w-full bg-background animate-[fade_0.45s_ease-in-out]">
+                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.30s_ease-in-out]">
                         <Anchor
                            href="/about"
                            text="Về chúng mình"
                         />
+                        </div>
+                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.35s_ease-in-out]">
                         <Anchor
                            href="/gallery"
                             text="Thư viện ảnh"
                         />
+                        </div>
+                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.40s_ease-in-out]">
                         <Anchor 
                            href="/workshop"
                            text="Workshop"
                         />
+                        </div>
+                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.45s_ease-in-out]">
                         <Anchor
                            href="/apply"
                             text="Apply"
