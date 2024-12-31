@@ -1,13 +1,4 @@
-import { Roboto } from 'next/font/google';
 import "@/app/globals.css";
-
-const geistSans = Roboto({
-  weight: '400',
-});
-
-const geistMono = Roboto({
-  weight: '400',
-});
 
 export default function RootLayout({
   children,
@@ -17,7 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head/>
-      <body className={`${geistSans} ${geistMono} antialiased font-sans`}>
+      <body className={`antialiased font-sans`}>
         {children}
       </body>
     </html>
