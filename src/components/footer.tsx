@@ -16,14 +16,14 @@ const Footer = () => {
               rel="noopener"
               className="mr-1">
                 <FaInstagram className="color"></FaInstagram>
-              </a>
-              <a 
+            </a>
+            <a 
               href="https://facebook.com/cpmc.vcp"
               title="Instagram"
               target="_blank"
               rel="noopener">
                 <FaFacebook className="color"></FaFacebook>
-              </a>
+            </a>
           </div>
         </div>
       </footer>
