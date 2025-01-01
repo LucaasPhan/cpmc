@@ -7,6 +7,16 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'super-sm': '375px',
+      'sm': '640px',
+      'ml': '425px',
+      'md': '768px',
+      'lg': '1024px',
+      'super-lg': '1440px',
+      'xl': '1280px',
+      '2xl': '1536px'
+    },
     extend: {
       colors: {
         background: "var(--background)",
@@ -20,11 +30,11 @@ export default {
         'fade': {
           '0%': { opacity: '0'},
           '100%': { opacity: '1' }
-        },
+        }
       },
       animation: {
         'open-menu': 'open-menu ease-in-out',
-        'fade': 'fade ease-in-out'
+        'fade': 'fade ease-in-out',
       }
     },
   },
