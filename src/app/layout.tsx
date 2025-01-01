@@ -1,4 +1,10 @@
-import "@/app/globals.css";
+import "./globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: '400',
+})
+
 
 export default function RootLayout({
   children,
@@ -8,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head/>
-      <body className={`antialiased font-sans`}>
+      <body className={`${inter.className} antialiased font-sans`}>
         {children}
       </body>
     </html>
