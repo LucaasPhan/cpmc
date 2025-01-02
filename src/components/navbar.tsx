@@ -13,7 +13,7 @@ const Navbar = () => {
             <nav className="flex items-center justify-between py-2 gap-3 relative xl:px-[10%] 2xl:px-[20%] px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
                     <Link href="/">
-                        <Image className="mr-3 max-lg:w-[40px] max-lg:h-auto focus:border-none"
+                        <Image className="mr-3 w-[40px] lg:w-[50px] h-auto focus:border-none"
                             src="/favicon_nobg.png"
                             width={50}
                             height={50}
