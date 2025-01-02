@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "@/components/footer";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const AuthLayout = ({children}: {children: ReactNode}) => {
     return (
@@ -19,10 +20,33 @@ const AuthLayout = ({children}: {children: ReactNode}) => {
                 <Link href="/"><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
             </div>
             </div>
-            <div className="flex flex-col justify-center items-center pt-16 pb-10">
+            <div className="flex flex-col justify-center items-center pt-16 pb-24">
                 <div>{children}</div>
             </div>
-            <Footer />
+            <div className="bg-[#010101] text-color justify-around block w-full">
+                <div className="flex flex-col md:flex-row items-center justify-between py-2 gap-3 px-[25vw]">
+                    <div className="flex justify-center items-center py-2 order-1 md:order-0 text-sm whitespace-nowrap">
+                    <p>© 2024 Central Park Media Crew</p>
+                    </div>
+                    <div className="flex items-center justify-center order-0 md:order-1 flex-shrink-0">
+                    <a 
+                        href="https://instagram.com/cpmc.vcp/"
+                        title="Instagram"
+                        target="_blank"
+                        rel="noopener"
+                        className="mr-1">
+                        <FaInstagram className="color"></FaInstagram>
+                    </a>
+                    <a 
+                        href="https://facebook.com/cpmc.vcp"
+                        title="Instagram"
+                        target="_blank"
+                        rel="noopener">
+                        <FaFacebook className="color"></FaFacebook>
+                    </a>
+                    </div>
+                </div>
+            </div>
         </body>
     );
 };
