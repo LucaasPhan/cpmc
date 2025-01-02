@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({
-  weight: '400',
-  subsets: ['vietnamese']
+  subsets: ['vietnamese'],
+  weight: '400'
 })
 
 export default function RootLayout({
