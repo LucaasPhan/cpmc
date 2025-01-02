@@ -49,7 +49,7 @@ const Navbar = () => {
                     }
                 </div>
                 {toggle && (
-                    <div className="lg:hidden absolute top-[60px] left-0 w-full bg-background animate-[fade_0.45s_ease-in-out]">
+                    <div className="xl:hidden absolute top-[60px] left-0 w-full bg-background animate-[fade_0.45s_ease-in-out]">
                         <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.30s_ease-in-out]">
                         <Anchor
                            href="/about"

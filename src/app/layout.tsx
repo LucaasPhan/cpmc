@@ -6,7 +6,6 @@ const inter = Inter({
   subsets: ['vietnamese']
 })
 
-
 export default function RootLayout({
   children,
 }: {

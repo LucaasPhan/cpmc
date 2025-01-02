@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <title>Trang chủ</title>
       <Navbar/>
-      <div className="flex flex-col items-center lg:px-[7%] xl:px-[20%]"> 
+      <div className="flex flex-col items-center lg:px-[5%] xl:px-[10%] 2xl:px-[20%]"> 
         <Title/>
         <Introduction/>
       </div>
