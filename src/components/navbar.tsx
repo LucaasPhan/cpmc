@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <header className="fixed top-0 w-full z-[1000] bg-background shadow-xl">
-            <nav className="flex items-center justify-between py-2 gap-3 relative lg:px-[20%] max-lg:px-[3%]">
+            <nav className="flex items-center justify-between py-2 gap-3 relative xl:px-[10%] 2xl:px-[20%] px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
                     <Link href="/">
                         <Image className="mr-3 max-lg:w-[40px] max-lg:h-auto"
