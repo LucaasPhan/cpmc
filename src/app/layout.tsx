@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       telemetry={false}>
-          <html lang="vn-VN">
+          <html lang="vi-VN">
         <head/>
         <body className={`${inter.className} antialiased font-sans`}>
           {children}
