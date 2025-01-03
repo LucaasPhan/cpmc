@@ -1,30 +1,30 @@
 "use client";
 import { useUser, useClerk } from "@clerk/nextjs";
+import Link from "next/link";
 
 const UserMenu = () => {
     const {user} = useUser();
     const {signOut} = useClerk();
-
+    const displayName = user?.username;
     const signOutUser = async () => {
         signOut({redirectUrl: "/"});
     };
 
     return (
-    <div className="absolute translate-x-[325px] translate-y-28 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-foreground text-background ">
-        <ul className="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
-        <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Dashboard</a>
-        </li>
-        <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-60">Settings</a>
-        </li>
-        <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Earnings</a>
-        </li>
-        <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Sign out</a>
-        </li>
-        </ul>
+    <div className="relative top-5 text-background">
+        <div className="absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow-lg animate-[open-user-menu_0.2s_ease-in-out]">
+            <ul className="py-2 text-sm">
+                <li>
+                    <div className="block px-4 py-2 font-semibold">{displayName}</div>
+                </li>
+                <li>
+                    <Link href="/" className="block px-4 py-2 hover:bg-gray-100">Setting</Link>
+                </li>
+                <li>
+                    <div className="block px-4 py-2 text-red-600 hover:text-white hover:bg-red-500 cursor-pointer" onClick={() => {signOutUser()}}>Sign Out</div>
+                </li>
+            </ul>
+        </div>
     </div>
     );
 };  

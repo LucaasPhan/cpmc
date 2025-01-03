@@ -28,6 +28,10 @@ export default {
           '0%': { translate: '-150px 0px'},
           '100%': { translate: '0px 0px'}
         },
+        'open-user-menu': {
+          '0%': { translate: '0px 50px', opacity: '0'},
+          '100%': { translate: '0px 0px', opacity: '1'}
+        },
         'fade': {
           '0%': { opacity: '0'},
           '100%': { opacity: '1' }

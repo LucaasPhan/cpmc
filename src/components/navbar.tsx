@@ -4,17 +4,14 @@ import Anchor from "./_components/Anchor";
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 import UserMenu from "./_components/userMenu";
-import { useUser, useClerk } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const [toggleMenu, setToggleMenu] = useState(false);
     const {user} = useUser();
-    const {signOut} = useClerk();
-    const signOutUser = async () => {
-        signOut({redirectUrl: "/"});
-    };
     const imageUrl = user?.imageUrl;
     const params = new URLSearchParams();
     const w = 50, h = 50, q = 100;
@@ -41,7 +38,7 @@ const Navbar = () => {
                     </Link>
                     <Link href="/"><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
                 </div>
-                <div className="flex items-center flex-shrink-0 text-color max-xl:hidden gap-2">
+                <div className="flex items-center flex-shrink-0 text-color max-xl:hidden">
                     <Anchor
                         href="/about"
                         text="Về chúng mình"
@@ -55,12 +52,12 @@ const Navbar = () => {
                         text="Workshop"
                     />
                     <Anchor
-                        href="/apply"
-                        text="Apply"
+                        href="/recruit"
+                        text="Recruit"
                     />
                     <SignedIn>
-                        <div className="pl-1 block" onClick={() => setToggle(!toggle)}>
-                            {toggle ? (
+                        <div className="pl-1 block" onClick={() => setToggleMenu(!toggleMenu)}>
+                            {toggleMenu ? (
                                 <div>
                                     <Image
                                         loader={imageLoader}
@@ -78,16 +75,21 @@ const Navbar = () => {
                                         width={w}
                                         height={h}
                                         alt="User avatar"
-                                        className="rounded-full w-[30px] h-auto"/>
+                                        className="rounded-full w-[30px] h-auto hover:scale-[1.05] transition-all duration-[0.1]"/>
                                 </div>
                             )}
                         </div>
-                        {toggle && (
+                        {toggleMenu && (
                             <UserMenu/>
                         )}
                     </SignedIn>
                     <SignedOut>
-                        <Anchor href="/" text="TEST"/>
+                        <div className="text-foreground bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 ml-1 transition-all">
+                            <SignInButton>Log In</SignInButton>
+                        </div>
+                        <div className="text-foreground border hover:border-blue-800 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 transition-all">
+                            <SignUpButton>Sign Up</SignUpButton>
+                        </div>
                     </SignedOut>
                 </div>
                 <div className="block xl:hidden" onClick={() => setToggle(!toggle)}>
@@ -120,8 +122,8 @@ const Navbar = () => {
                         </div>
                         <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.45s_ease-in-out]">
                         <Anchor
-                           href="/apply"
-                            text="Apply"
+                           href="/recruit"
+                            text="Recuit"
                         />
                         </div>
                     </div>

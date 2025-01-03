@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { FaArrowDown } from "react-icons/fa";
 
-const Apply = () => {
+const Recruit = () => {
     return (
         <>
             <title>Apply</title>
@@ -29,4 +29,4 @@ const Apply = () => {
     )
 }
 
-export default Apply;
+export default Recruit;
