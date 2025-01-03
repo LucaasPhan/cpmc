@@ -53,7 +53,7 @@ const Navbar = () => {
                         <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.45s_ease-in-out]">
                         <Anchor
                            href="/recruit"
-                            text="Recuit"
+                            text="Recruit"
                         />
                         </div>
                     </div>
