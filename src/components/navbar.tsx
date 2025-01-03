@@ -4,29 +4,17 @@ import Anchor from "./_components/Anchor";
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
-import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import UserMenu from "./_components/userMenu";
-import { useUser } from "@clerk/nextjs";
+import Avatar from "./_components/avatar";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
-    const {user} = useUser();
-    const imageUrl = user?.imageUrl;
-    const params = new URLSearchParams();
-    const w = 50, h = 50, q = 100;
-    params.set("height", `${h}`);
-    params.set("width", `${w}`);
-    params.set("quality", `${q}`);
-    const imageSrc = `${imageUrl}?${params.toString()}`;
-    const imageLoader = () => {
-        return `${imageSrc}`;
-    }
-
 
     return (
         <header className="fixed top-0 w-full z-[1000] bg-background shadow-xl">
-            <nav className="flex items-center justify-between py-2 gap-3 relative xl:px-[10%] 2xl:px-[20%] px-[3%]">
+            <nav className="flex items-center justify-between py-2 relative gap-3 xl:px-[10%] 2xl:px-[20%] px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
                     <Link href="/">
                         <Image className="mr-3 w-[40px] lg:w-[50px] h-auto focus:border-none"
@@ -38,45 +26,46 @@ const Navbar = () => {
                     </Link>
                     <Link href="/"><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
                 </div>
-                <div className="flex items-center flex-shrink-0 text-color max-xl:hidden">
-                    <Anchor
-                        href="/about"
-                        text="Về chúng mình"
-                    />
-                    <Anchor
-                        href="/gallery"
-                        text="Thư viện ảnh"
-                    />
-                    <Anchor 
-                        href="/workshop"
-                        text="Workshop"
-                    />
-                    <Anchor
-                        href="/recruit"
-                        text="Recruit"
-                    />
+                <div
+                className={`flex flex-col ${
+                toggle ? null : "hidden"
+                } w-full xl:w-max items-center xl:flex-row absolute xl:flex xl:relative left-0 top-[100%] hover:cursor-pointer py-0 z-10`}
+                >
+                    <div className="flex flex-col xl:flex-row xl:w-max w-full absolute xl:relative left-0 bg-background xl:bg-transparent max-xl:animate-[fade_0.45s_ease-in-out]" onClick={() => setToggle(false)}>
+                        <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.30s_ease-in-out]">
+                        <Anchor
+                           href="/about"
+                           text="Về chúng mình"
+                        />
+                        </div>
+                        <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.35s_ease-in-out]">
+                        <Anchor
+                           href="/gallery"
+                            text="Thư viện ảnh"
+                        />
+                        </div>
+                        <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.40s_ease-in-out]">
+                        <Anchor 
+                           href="/workshop"
+                           text="Workshop"
+                        />
+                        </div>
+                        <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.45s_ease-in-out]">
+                        <Anchor
+                           href="/recruit"
+                            text="Recuit"
+                        />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex xl:w-[56px]">
                     <SignedIn>
-                        <div className="pl-1 block" onClick={() => setToggleMenu(!toggleMenu)}>
+                        <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
                             {toggleMenu ? (
-                                <div>
-                                    <Image
-                                        loader={imageLoader}
-                                        src={imageSrc}
-                                        width={w}
-                                        height={h}
-                                        alt="User avatar"
-                                        className="rounded-full w-[30px] h-auto"/>
-                                </div>
+                                <Avatar/>
                             ) : (
-                                <div>
-                                    <Image
-                                        loader={imageLoader}
-                                        src={imageSrc}
-                                        width={w}
-                                        height={h}
-                                        alt="User avatar"
-                                        className="rounded-full w-[30px] h-auto hover:scale-[1.05] transition-all duration-[0.1]"/>
-                                </div>
+                                <Avatar/>
                             )}
                         </div>
                         {toggleMenu && (
@@ -84,15 +73,19 @@ const Navbar = () => {
                         )}
                     </SignedIn>
                     <SignedOut>
-                        <div className="text-foreground bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 ml-1 transition-all">
-                            <SignInButton>Log In</SignInButton>
+                        <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
+                            {toggleMenu ? (
+                                <Avatar/>
+                            ) : (
+                                <Avatar/>
+                            )}
                         </div>
-                        <div className="text-foreground border hover:border-blue-800 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 transition-all">
-                            <SignUpButton>Sign Up</SignUpButton>
-                        </div>
+                        {toggleMenu && (
+                            <UserMenu/>
+                        )}
                     </SignedOut>
                 </div>
-                <div className="block xl:hidden" onClick={() => setToggle(!toggle)}>
+                <div className="block xl:hidden cursor-pointer" onClick={() => setToggle(!toggle)}>
                     {toggle ? (<ImCross
                                 size={12}/>
                     ) : (
@@ -100,34 +93,6 @@ const Navbar = () => {
                     )
                     }
                 </div>
-                {toggle && (
-                    <div className="xl:hidden absolute top-[60px] left-0 w-full bg-background animate-[fade_0.45s_ease-in-out]">
-                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.30s_ease-in-out]">
-                        <Anchor
-                           href="/about"
-                           text="Về chúng mình"
-                        />
-                        </div>
-                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.35s_ease-in-out]">
-                        <Anchor
-                           href="/gallery"
-                            text="Thư viện ảnh"
-                        />
-                        </div>
-                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.40s_ease-in-out]">
-                        <Anchor 
-                           href="/workshop"
-                           text="Workshop"
-                        />
-                        </div>
-                        <div className="px-2 py-2 space-y-1 text-right bg-background block animate-[open-menu_0.45s_ease-in-out]">
-                        <Anchor
-                           href="/recruit"
-                            text="Recuit"
-                        />
-                        </div>
-                    </div>
-                )}
             </nav>
         </header>
     );
