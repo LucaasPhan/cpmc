@@ -4,9 +4,28 @@ import Anchor from "./_components/Anchor";
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import UserMenu from "./_components/userMenu";
+import { useUser, useClerk } from "@clerk/nextjs";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const {user} = useUser();
+    const {signOut} = useClerk();
+    const signOutUser = async () => {
+        signOut({redirectUrl: "/"});
+    };
+    const imageUrl = user?.imageUrl;
+    const params = new URLSearchParams();
+    const w = 50, h = 50, q = 100;
+    params.set("height", `${h}`);
+    params.set("width", `${w}`);
+    params.set("quality", `${q}`);
+    const imageSrc = `${imageUrl}?${params.toString()}`;
+    const imageLoader = () => {
+        return `${imageSrc}`;
+    }
+
 
     return (
         <header className="fixed top-0 w-full z-[1000] bg-background shadow-xl">
@@ -39,6 +58,37 @@ const Navbar = () => {
                         href="/apply"
                         text="Apply"
                     />
+                    <SignedIn>
+                        <div className="pl-1 block" onClick={() => setToggle(!toggle)}>
+                            {toggle ? (
+                                <div>
+                                    <Image
+                                        loader={imageLoader}
+                                        src={imageSrc}
+                                        width={w}
+                                        height={h}
+                                        alt="User avatar"
+                                        className="rounded-full w-[30px] h-auto"/>
+                                </div>
+                            ) : (
+                                <div>
+                                    <Image
+                                        loader={imageLoader}
+                                        src={imageSrc}
+                                        width={w}
+                                        height={h}
+                                        alt="User avatar"
+                                        className="rounded-full w-[30px] h-auto"/>
+                                </div>
+                            )}
+                        </div>
+                        {toggle && (
+                            <UserMenu/>
+                        )}
+                    </SignedIn>
+                    <SignedOut>
+                        <Anchor href="/" text="TEST"/>
+                    </SignedOut>
                 </div>
                 <div className="block xl:hidden" onClick={() => setToggle(!toggle)}>
                     {toggle ? (<ImCross
