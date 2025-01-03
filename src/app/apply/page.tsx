@@ -20,7 +20,7 @@ const Apply = () => {
                         target="_blank"
                         rel="noopener"
                         className="">
-                            <div className="bg-blue-700 hover:bg-blue-800 hover:scale-110 transition-all focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xl px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Recruit!</div>
+                            <div className="bg-blue-700 hover:bg-blue-800 hover:scale-110 transition-all focus:ring-4 focus:ring-blue-300 rounded-lg text-lg px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Recruit!</div>
                         </a>
                 </div>
             </div>
