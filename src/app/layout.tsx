@@ -5,8 +5,8 @@ import { viVN } from "@clerk/localizations";
 
 const inter = Inter({
   subsets: ['vietnamese'],
-  weight: '400'
-})
+  variable: '--font-inter',
+});
 
 export default function RootLayout({
   children,

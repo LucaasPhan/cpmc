@@ -25,7 +25,7 @@ const Avatar = () => {
                     width={w}
                     height={h}
                     alt="User avatar"
-                    className="rounded-full w-[30px] h-auto resize-none"/>
+                    className="rounded-full w-[30px] h-auto cursor-pointer"/>
                 ) : (
                     <FaUserCircle className='w-[30px] h-auto'/>
                 )}

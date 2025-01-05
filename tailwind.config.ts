@@ -40,7 +40,7 @@ export default {
       animation: {
         'open-menu': 'open-menu ease-in-out',
         'fade': 'fade ease-in-out',
-      }
+      },
     },
   },
   plugins: [],

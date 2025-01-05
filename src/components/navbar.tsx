@@ -29,7 +29,7 @@ const Navbar = () => {
                 <div
                 className={`flex flex-col ${
                 toggle ? null : "hidden"
-                } w-full xl:w-max items-center xl:flex-row absolute xl:flex xl:relative left-0 top-[100%] hover:cursor-pointer py-0 z-10`}
+                } w-full xl:w-max items-center xl:flex-row absolute xl:flex xl:relative left-0 top-[90%] hover:cursor-pointer py-0 z-10`}
                 >
                     <div className="flex flex-col xl:flex-row xl:w-max w-full absolute xl:relative left-0 bg-background xl:bg-transparent max-xl:animate-[fade_0.45s_ease-in-out]" onClick={() => setToggle(false)}>
                         <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.30s_ease-in-out]">
@@ -59,7 +59,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="flex xl:w-[56px]">
+                <div className="flex xl:w-[56px] align-middle">
                     <SignedIn>
                         <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
                             {toggleMenu ? (
@@ -85,11 +85,11 @@ const Navbar = () => {
                         )}
                     </SignedOut>
                 </div>
-                <div className="block xl:hidden cursor-pointer" onClick={() => setToggle(!toggle)}>
+                <div className="block xl:hidden size-[16px] items-center cursor-pointer" onClick={() => setToggle(!toggle)}>
                     {toggle ? (<ImCross
-                                size={12}/>
+                                size={14}/>
                     ) : (
-                        <FaBars/>
+                        <FaBars size={15}/>
                     )
                     }
                 </div>
