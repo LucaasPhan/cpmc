@@ -13,7 +13,7 @@ const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
-        <header className="fixed top-0 w-full z-[1000] bg-background shadow-xl">
+        <header className="fixed top-0 w-full z-[1000] bg-background text-foreground shadow-md">
             <nav className="flex items-center justify-between py-2 relative gap-3 xl:px-[10%] 2xl:px-[20%] px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
                     <Link href="/">
@@ -24,12 +24,12 @@ const Navbar = () => {
                             alt="CPMC logo"
                         />
                     </Link>
-                    <Link href="/"><span className="font-semibold text-xl tracking-tight text-color max-xl:hidden">Central Park Media Crew</span></Link>
+                    <Link href="/"><span className="font-semibold text-xl tracking-tight max-xl:hidden">Central Park Media Crew</span></Link>
                 </div>
                 <div
                 className={`flex flex-col ${
                 toggle ? null : "hidden"
-                } w-full xl:w-max items-center xl:flex-row absolute xl:flex xl:relative left-0 top-[90%] hover:cursor-pointer py-0 z-10`}
+                } w-full xl:w-max items-center xl:flex-row absolute xl:flex xl:relative left-0 top-[100%] hover:cursor-pointer py-0 z-10`}
                 >
                     <div className="flex flex-col xl:flex-row xl:w-max w-full absolute xl:relative left-0 bg-background xl:bg-transparent max-xl:animate-[fade_0.45s_ease-in-out]" onClick={() => setToggle(false)}>
                         <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.30s_ease-in-out]">
@@ -59,7 +59,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="flex xl:w-[56px] align-middle">
+                <div className="flex xl:w-[56px]">
                     <SignedIn>
                         <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
                             {toggleMenu ? (
