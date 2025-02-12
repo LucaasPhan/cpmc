@@ -1,14 +1,22 @@
-import { Caveat } from "next/font/google";
+import { Raleway } from "next/font/google";
+import Link from "next/link";
 
-const caveat = Caveat({ subsets: ["latin"] });
+const raleway = Raleway({
+    subsets: ["latin"],
+    style: "italic"
+});
 
 const Title = () => {
     return(
         <section id="#" className="">
-            <div className="relative flex items-center justify-around flex-col sm:flex-row pt-16 bg-center[-50] bg-no-repeat bg-[url('/banner.jpg')] bg-cover h-[500px] overflow-hidden bg-purple-950/40 bg-blend-multiply">
-                <div className="flex flex-col gap-7 items-center align-middle px-2">
-                    <h1 className={`text-[45px] md:text-7xl xl:text-8xl ${caveat.className} text-center text-color drop-shadow-2xl`}>CENTRAL PARK MEDIA CREW</h1>
-                    <p className="bg-gradient-to-r from-[#b1aebb] via-[#f395f7] via-40% to-[#96c2f5] text-transparent bg-clip-text xl:text-xl text-lg text-center mx-2 font-semibold drop-shadow-2xl">Ghi lại khoảnh khắc, Lan tỏa tiếng nói, Tạo nên sự khác biệt</p>
+            <div className="relative flex items-end pb-16 justify-around flex-col sm:flex-row pt-16 bg-center[-50] bg-no-repeat bg-[url('/banner.jpg')] bg-cover h-[100vh] overflow-hidden bg-purple-950/25 bg-blend-multiply">
+                <div className="w-[100vw] flex flex-col gap-y-5 px-[5%] xl:px-[10%] 2xl:px-[20%] items-left">
+                    <div className="md:w-[60%]">
+                        <p className={`text-4xl md:text-5xl md:leading-[60px] ${raleway.className} drop-shadow-md`}>Ghi lại <span className="font-semibold">khoảnh khắc</span>, lan tỏa <span className="font-semibold">tiếng nói</span>, tạo nên <span className="font-semibold">sự khác biệt</span>.</p>
+                    </div>
+                    <Link href="/about">
+                        <div className="text-white w-fit bg-blue-700 hover:scale-[1.05] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-7 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 transition-all">Tìm hiểu thêm →</div>
+                    </Link>
                 </div>
             </div>
         </section>

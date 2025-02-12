@@ -8,12 +8,12 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import UserMenu from "./_components/userMenu";
 import Avatar from "./_components/avatar";
 
-const Navbar = () => {
+const Navbar = ({noShadow: noShadow = false}: {noShadow?: boolean}) => {
     const [toggle, setToggle] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
-        <header className="fixed top-0 w-full z-[1000] bg-background text-foreground shadow-md">
+        <header className={`fixed top-0 w-full z-[1000] text-foreground ${!noShadow ? "shadow-md" : null} ${toggle ? "bg-[#17153B]/90" : null} transition-all duration-500`}>
             <nav className="flex items-center justify-between py-2 relative gap-3 xl:px-[10%] 2xl:px-[20%] px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
                     <Link href="/">
@@ -31,7 +31,7 @@ const Navbar = () => {
                 toggle ? null : "hidden"
                 } w-full xl:w-max items-center xl:flex-row absolute xl:flex xl:relative left-0 top-[100%] hover:cursor-pointer py-0 z-10`}
                 >
-                    <div className="flex flex-col xl:flex-row xl:w-max w-full absolute xl:relative left-0 bg-background xl:bg-transparent max-xl:animate-[fade_0.45s_ease-in-out]" onClick={() => setToggle(false)}>
+                    <div className="flex flex-col xl:flex-row xl:w-max w-full absolute xl:relative left-0 drop-shadow-xl bg-[#17153B]/90 font-medium xl:bg-transparent max-xl:animate-[fade_0.45s_ease-in-out]" onClick={() => setToggle(false)}>
                         <div className="px-2 py-2 space-y-1 text-right block max-xl:animate-[open-menu_0.30s_ease-in-out]">
                         <Anchor
                            href="/about"
@@ -59,7 +59,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="flex xl:w-[56px]">
+                <div className="flex xl:w-[56px] hover:cursor-pointer">
                     <SignedIn>
                         <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
                             {toggleMenu ? (

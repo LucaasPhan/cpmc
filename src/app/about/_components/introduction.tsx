@@ -15,7 +15,7 @@ const Introduction = () => {
                     width={300}
                     height={300}
                     alt="test"
-                    className='flex order-1 w-[300px] sm:w-[400px]'></Image>
+                    className='flex order-1 w-[300px] sm:w-[400px] '></Image>
             </div>
         </section>
     )
