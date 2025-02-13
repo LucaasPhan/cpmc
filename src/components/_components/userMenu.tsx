@@ -34,7 +34,7 @@ const UserMenu = () => {
                     <div className="bg-blue-700 hover:bg-blue-800 text-center font-medium rounded-lg text-sm mx-2 my-2 px-5 py-2 hover:scale-[1.05] transition-all">
                         <SignInButton>Log In</SignInButton>
                     </div>
-                    <div className="border border-background hover:border-blue-800 hover:bg-blue-800 text-background text-center font-medium rounded-lg text-sm mx-2 my-2 px-5 py-2 hover:scale-[1.05] transition-all">
+                    <div className="border border-background hover:border-blue-800 hover:bg-blue-800 text-background hover:text-foreground text-center font-medium rounded-lg text-sm mx-2 my-2 px-5 py-2 hover:scale-[1.05] transition-all">
                         <SignUpButton>Sign Up</SignUpButton>
                     </div>
                 </div>
