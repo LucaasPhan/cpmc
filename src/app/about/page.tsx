@@ -33,7 +33,7 @@ const About = () => {
                 <ScrollPage>
                     <div className={`relative flex items-center gap-y-3 pb-16 justify-center flex-col pt-16 bg-center[-50] bg-no-repeat bg-[url('/banner.jpg')] bg-cover h-[100vh] overflow-hidden bg-purple-950/25 bg-blend-multiply ${raleway.className}`}>
                         <Animator animation={Fade()}>
-                            <div className="text-7xl lg:text-8xl font-bold h-[90vh] translate-y-[40vh] text-center drop-shadow-2    xl">Chúng mình là ai?</div>
+                            <div className="text-6xl pl-3 md:pl-0 lg:text-8xl font-bold h-[90vh] translate-y-[40vh] md:text-center drop-shadow-2">Chúng mình là ai?</div>
                         </Animator>
                         <Animator animation={Fade()}>
                             <div className="items-center animate-bounce">
