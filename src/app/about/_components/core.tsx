@@ -6,7 +6,7 @@ const raleway = Raleway({
     style: ["italic", "normal"]
 })
 
-const Core = ({switchSide: switchSide = false, position, positionVN, name, content, image: image = "/gigachad.jpg"}: {switchSide?: boolean, position: string, positionVN: string, name: string, content: string, image?: string}) => {
+const Core = ({switchSide: switchSide = false, position, positionVN, name, content, image: image = "/Gigachad.jpg"}: {switchSide?: boolean, position: string, positionVN: string, name: string, content: string, image?: string}) => {
     return (
         <div className={`${raleway.className} flex flex-col my-32 pt-28 pb-32 h-[75vh] w-[100vw] items-center justify-center `}>
             <div className={`text-center font-bold text-4xl md:text-5xl lg:text-7xl w-full pb-1`}>{position}</div>
