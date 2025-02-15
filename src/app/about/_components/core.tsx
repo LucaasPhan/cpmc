@@ -1,14 +1,8 @@
-import { Raleway } from "next/font/google";
 import Image from "next/image";
 
-const raleway = Raleway({
-    subsets: ["latin"],
-    style: ["italic", "normal"]
-})
-
-const Core = ({switchSide: switchSide = false, position, positionVN, name, content, image: image = "/Gigachad.jpg"}: {switchSide?: boolean, position: string, positionVN: string, name: string, content: string, image?: string}) => {
+const Core = ({switchSide: switchSide = false, position, positionVN, name, content, image: image = "/Gigachad.jpg", font}: {switchSide?: boolean, position: string, positionVN: string, name: string, content: string, image?: string, font: string}) => {
     return (
-        <div className={`${raleway.className} flex flex-col my-32 pt-28 pb-32 h-[75vh] w-[100vw] items-center justify-center `}>
+        <div className={`${font} flex flex-col my-32 pt-28 pb-32 h-[75vh] w-[100vw] items-center justify-center `}>
             <div className={`text-center font-bold text-4xl md:text-5xl lg:text-7xl w-full pb-1`}>{position}</div>
             <div className={`text-center text-lg md:text-xl lg:text-3xl w-full lg:mb-10 italic`}>{positionVN}</div>
             <div className="flex flex-col lg:flex-row w-full items-center justify-center lg:mt-5 gap-y-3 gap-x-20 lg:gap-y-0">

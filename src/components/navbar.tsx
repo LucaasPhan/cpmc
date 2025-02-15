@@ -8,12 +8,12 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import UserMenu from "./_components/userMenu";
 import Avatar from "./_components/avatar";
 
-const Navbar = ({noShadow: noShadow = false, about: about = false}: {noShadow?: boolean, about?: boolean}) => {
+const Navbar = ({noShadow: noShadow = false, isFixed: isFixed = false}: {noShadow?: boolean, isFixed?: boolean}) => {
     const [toggle, setToggle] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
-        <header className={`${about ? "absolute" : "fixed"} top-0 w-full z-[1000] text-foreground ${!noShadow ? "shadow-md" : null} ${toggle ? "bg-[#17153B]/90" : null} transition-all duration-500`}>
+        <header className={`${isFixed ? "absolute" : "fixed"} top-0 w-full z-[1000] text-foreground ${!noShadow ? "shadow-md" : null} ${toggle ? "bg-[#17153B]/90" : null} transition-all duration-500`}>
             <nav className="flex items-center justify-between py-2 relative gap-3 xl:px-[10%] 2xl:px-[20%] px-[3%]">
                 <div className="flex justify-start items-center w-full py-2 whitespace-nowrap">
                     <Link href="/">
