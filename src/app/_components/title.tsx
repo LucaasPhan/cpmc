@@ -2,7 +2,7 @@ import { Raleway } from "next/font/google";
 import Link from "next/link";
 
 const raleway = Raleway({
-    subsets: ["latin"],
+    subsets: ["vietnamese"],
     style: "italic"
 });
 
