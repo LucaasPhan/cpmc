@@ -14,6 +14,7 @@ import 'overlayscrollbars/overlayscrollbars.css';
 import { useEffect } from "react";
 import { motion, useAnimationControls, useScroll, Variants } from "motion/react";
 
+
 const raleway = Raleway({
     subsets: ["vietnamese"],
     style: ["italic", "normal"]
@@ -151,6 +152,9 @@ const About = () => {
                         font={font}
                     />
                 </ScrollPage>
+                {/* <ScrollPage>
+                    <Department/>
+                </ScrollPage> */}
             </ScrollContainer>
             <motion.button
                 className="fixed bottom-0 right-0 m-5 p-3 bg-black/35 rounded-full"
