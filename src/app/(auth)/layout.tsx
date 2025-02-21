@@ -1,14 +1,26 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    import { ReactNode } from "react";
+    import Image from "next/image";
+    import Link from "next/link";
+    import Footer from "@/components/footer";
+=======
+>>>>>>> 199c3ca0ea9c21e362703916958a17b8126bd4e3
 import { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
+<<<<<<< HEAD
 =======
     import { ReactNode } from "react";
     import Image from "next/image";
     import Link from "next/link";
     import Footer from "@/components/footer";
 >>>>>>> f7b6cb0 (autoplay done)
+=======
+>>>>>>> b9297f40acace0e3fa49ce408d79087be0ce042d
+>>>>>>> 199c3ca0ea9c21e362703916958a17b8126bd4e3
 
     const AuthLayout = ({children}: {children: ReactNode}) => {
         return (
@@ -35,7 +47,14 @@ import Footer from "@/components/footer";
     };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default AuthLayout;
 =======
     export default AuthLayout;
 >>>>>>> f7b6cb0 (autoplay done)
+=======
+    export default AuthLayout;
+=======
+export default AuthLayout;
+>>>>>>> b9297f40acace0e3fa49ce408d79087be0ce042d
+>>>>>>> 199c3ca0ea9c21e362703916958a17b8126bd4e3
