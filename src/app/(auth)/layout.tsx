@@ -1,7 +1,14 @@
+<<<<<<< HEAD
     import { ReactNode } from "react";
     import Image from "next/image";
     import Link from "next/link";
     import Footer from "@/components/footer";
+=======
+import { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Footer from "@/components/footer";
+>>>>>>> b9297f40acace0e3fa49ce408d79087be0ce042d
 
     const AuthLayout = ({children}: {children: ReactNode}) => {
         return (
@@ -27,4 +34,8 @@
         );
     };
 
+<<<<<<< HEAD
     export default AuthLayout;
+=======
+export default AuthLayout;
+>>>>>>> b9297f40acace0e3fa49ce408d79087be0ce042d
