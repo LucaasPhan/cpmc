@@ -1,0 +1,14 @@
+.embla {
+    overflow: hidden;
+    height: 100vh;
+  }
+.embla__container {
+  display: flex;
+  flex-direction: row;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  justify-content: center;
+  width: 30vw;
+  height: 50vh;
+}

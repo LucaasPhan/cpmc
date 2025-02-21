@@ -1,5 +1,5 @@
+import NavigationButton from "@/components/_components/navigationButton";
 import { Raleway } from "next/font/google";
-import Link from "next/link";
 
 const raleway = Raleway({
     subsets: ["vietnamese"],
@@ -14,9 +14,7 @@ const Title = () => {
                     <div className="md:w-[60%]">
                         <p className={`text-4xl md:text-5xl md:leading-[60px] ${raleway.className} drop-shadow-md`}>Ghi lại <span className="font-semibold">khoảnh khắc</span>, lan tỏa <span className="font-semibold">tiếng nói</span>, tạo nên <span className="font-semibold">sự khác biệt</span>.</p>
                     </div>
-                    <Link href="/about">
-                        <div className="text-white w-fit bg-[#917153] hover:scale-[1.05] hover:bg-[#7c6147] focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-7 py-2.5 focus:outline-none transition-all">Tìm hiểu thêm →</div>
-                    </Link>
+                    <NavigationButton href="/about" text="Tìm hiểu thêm →"/>
                 </div>
             </div>
         </section>
