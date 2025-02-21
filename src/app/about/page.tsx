@@ -13,6 +13,7 @@ import { useOverlayScrollbars } from 'overlayscrollbars-react';
 import 'overlayscrollbars/overlayscrollbars.css';
 import { useEffect } from "react";
 import { motion, useAnimationControls, useScroll, Variants } from "motion/react";
+import Department from "./_components/department";
 
 
 const raleway = Raleway({
@@ -146,15 +147,15 @@ const About = () => {
                 <ScrollPage>
                     <Core
                         position="HEAD OF DESIGN"
-                        positionVN="Trưởng Ban Thiết Kế"
+                        positionVN="Trưởng Ban Design"
                         name="Hòa Thị Minh Ngân"
                         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam laboriosam tenetur dolorem, quis accusamus voluptas commodi facilis laborum optio modi quidem blanditiis ab perspiciatis?"
                         font={font}
                     />
                 </ScrollPage>
-                {/* <ScrollPage>
-                    <Department/>
-                </ScrollPage> */}
+                <ScrollPage>
+                    <Department font={font}/>
+                </ScrollPage>   
             </ScrollContainer>
             <motion.button
                 className="fixed bottom-0 right-0 m-5 p-3 bg-black/35 rounded-full"
