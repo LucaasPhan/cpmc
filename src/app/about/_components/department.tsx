@@ -39,7 +39,7 @@ const Department = ({font}: {font: string}) => {
     
     return (
         <section id='Department' className="py-32">
-            <h1 className={`${font} text-5xl lg:text-6xl font-semibold text-center pb-3`}>DEPARTMENTS</h1>
+            <h1 className={`${font} text-5xl lg:text-6xl font-semibold text-center pb-3`}>Các ban của <span className="text-span font-bold">CPMC</span></h1>
             <h2 className="text-center text-sm md:text-lg px-5 md:px-32 pb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis sed harum dolor placeat, ab itaque omnis dolore deserunt quidem suscipit.</h2>
             <div className="embla">
                 <div className="embla__viewport" ref={emblaRef} onKeyDownCapture={handleKeyDown}>
