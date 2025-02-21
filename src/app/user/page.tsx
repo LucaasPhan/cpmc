@@ -12,9 +12,10 @@ const Setting = () => {
 
     return (
         <>
+          <title>Setting</title>
           <Navbar/>
-            <div className="flex justify-center items-center h-screen">
-                <div className="text-3xl font-semibold text-center">Setting (TEST)</div>
+            <div className="flex flex-col justify-center items-center h-screen">
+                
             </div>
           <Footer/>
         </>
