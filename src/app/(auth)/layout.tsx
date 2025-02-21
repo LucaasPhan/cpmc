@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { FaInstagram } from "react-icons/fa";
-// import { FaFacebook } from "react-icons/fa";
 import Footer from "@/components/footer";
 
 const AuthLayout = ({children}: {children: ReactNode}) => {
