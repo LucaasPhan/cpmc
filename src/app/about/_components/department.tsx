@@ -19,7 +19,7 @@ const Department = ({font}: {font: string}) => {
         }, [emblaApi])
     
     const handleKeyDown = useCallback(
-        (event: KeyboardEvent<HTMLDivElement>) => {
+        (event: React.KeyboardEvent<HTMLDivElement>) => {
             if (event.key === "ArrowLeft") {
                 event.preventDefault();
                 scrollPrev();
