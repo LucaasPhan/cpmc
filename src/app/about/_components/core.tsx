@@ -16,7 +16,7 @@ const Core = ({title: title = false, switchSide: switchSide = false, position, p
                 <Animator animation={batch(Fade(), MoveIn((switchSide ? 500 : -500)), MoveOut(0, -500))}>
                     <div className={`${font} flex flex-col my-32 pt-28 pb-32 h-[75vh] w-[100vw] items-center justify-center `}>
                         <div className={`text-center font-bold text-4xl md:text-5xl lg:text-7xl w-full pb-1`}>{position}</div>
-                        <div className={`text-center text-lg md:text-xl lg:text-3xl w-full lg:mb-10 italic`}>{positionVN}</div>
+                        <div className={`text-center text-lg md:text-xl lg:text-3xl w-full lg:mb-10`}>{positionVN}</div>
                         <div className="flex flex-col lg:flex-row w-full items-center justify-center lg:mt-5 gap-y-3 gap-x-20 lg:gap-y-0">
                             <div className={`px-12 lg:px-0 lg:w-[45%] ${switchSide ? "lg:order-1":"lg:order-0"}`}>
                                 <h1 className="text-center lg:text-left text-[36px] pb-1 lg:text-5xl font-semibold lg:font-medium tracking-tighter md:tracking-normal">{name}</h1>
