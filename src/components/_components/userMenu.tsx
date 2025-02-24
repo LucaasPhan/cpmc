@@ -3,7 +3,7 @@ import { useUser, useClerk } from "@clerk/nextjs";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import Link from "next/link";
 
-const UserMenu = () => {
+const UserMenu = ({toggleMenu}: {toggleMenu: boolean}) => {
     const { isSignedIn, user } = useUser();
     const {signOut} = useClerk();
     const displayName = user?.username;
@@ -13,7 +13,7 @@ const UserMenu = () => {
 
     return (
         (isSignedIn) ? (
-            <div className="relative top-9 z-0">
+            <div className={`${toggleMenu ? null : "hidden"} relative top-9 z-0`}>
                 <div className="absolute right-0 mt-2 w-44 bg-white text-background rounded-lg shadow-lg animate-[open-user-menu_0.2s_ease-in-out]">
                     <ul className="py-2 text-sm">
                         <li>
@@ -29,7 +29,7 @@ const UserMenu = () => {
                 </div>
             </div>
         ) : (
-            <div className="relative top-9 z-0">
+            <div className={`${toggleMenu ? null : "hidden"} relative top-9 z-0`}>
                 <div className="absolute right-0 mt-2 w-40 bg-white items-center rounded-lg shadow-lg animate-[open-user-menu_0.2s_ease-in-out]">
                     <div className="bg-blue-700 hover:bg-blue-800 text-center font-medium rounded-lg text-sm mx-2 my-2 px-5 py-2 hover:scale-[1.05] transition-all">
                         <SignInButton>Log In</SignInButton>

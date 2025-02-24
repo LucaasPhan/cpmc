@@ -11,6 +11,8 @@ import Avatar from "./_components/avatar";
 const Navbar = ({noShadow: noShadow = false, isFixed: isFixed = false}: {noShadow?: boolean, isFixed?: boolean}) => {
     const [toggle, setToggle] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
+    
+
 
     return (
         <header className={`${isFixed ? "absolute" : "fixed"} top-0 w-full z-[1000] text-foreground ${!noShadow ? "shadow-md" : null} ${toggle ? "bg-[#17153B]/90" : null} transition-all duration-500`}>
@@ -62,27 +64,15 @@ const Navbar = ({noShadow: noShadow = false, isFixed: isFixed = false}: {noShado
                 <div className="flex xl:w-[56px] hover:cursor-pointer">
                     <SignedIn>
                         <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
-                            {toggleMenu ? (
-                                <Avatar/>
-                            ) : (
-                                <Avatar/>
-                            )}
+                            <Avatar/>
                         </div>
-                        {toggleMenu && (
-                            <UserMenu/>
-                        )}
+                        <UserMenu toggleMenu={toggleMenu}/>
                     </SignedIn>
                     <SignedOut>
                         <div className="block" onClick={() => setToggleMenu(!toggleMenu)}>
-                            {toggleMenu ? (
-                                <Avatar/>
-                            ) : (
-                                <Avatar/>
-                            )}
+                            <Avatar/>
                         </div>
-                        {toggleMenu && (
-                            <UserMenu/>
-                        )}
+                        <UserMenu toggleMenu={toggleMenu}/>
                     </SignedOut>
                 </div>
                 <div className={"block xl:hidden size-[16px] items-center cursor-pointer"} onClick={() => setToggle(!toggle)}>
