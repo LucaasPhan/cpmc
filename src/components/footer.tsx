@@ -1,12 +1,15 @@
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
+
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
       <footer className="bg-[#010101] text-color justify-around block w-full">
         <div className="flex flex-col md:flex-row items-center justify-between py-2 gap-3 px-[25vw]">
           <div className="flex justify-center items-center py-2 order-1 md:order-0 text-sm whitespace-nowrap">
-            <p>© 2025 Central Park Media Crew</p>
+            <p>&copy; {currentYear} Central Park Media Crew</p>
           </div>
           <div className="flex items-center justify-center order-0 md:order-1 flex-shrink-0">
             <a 
