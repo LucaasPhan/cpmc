@@ -1,10 +1,10 @@
 import Anchor from "./_components/Anchor";
+import User from "./_components/user";
+import { Logo } from "./_components/logo";
+import { PAGE_INFO } from "./_constants/constants";
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
-import { Logo } from "./_components/logo";
-import { PAGE_INFO } from "./_constants/constants";
-import User from "./_components/user";
 
 const Navbar = ({noShadow: noShadow = false, isFixed: isFixed = false}: {noShadow?: boolean, isFixed?: boolean}) => {
     const [toggle, setToggle] = useState(false);
