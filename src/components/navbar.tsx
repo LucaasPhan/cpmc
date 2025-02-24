@@ -11,8 +11,6 @@ import Avatar from "./_components/avatar";
 const Navbar = ({noShadow: noShadow = false, isFixed: isFixed = false}: {noShadow?: boolean, isFixed?: boolean}) => {
     const [toggle, setToggle] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
-    
-
 
     return (
         <header className={`${isFixed ? "absolute" : "fixed"} top-0 w-full z-[1000] text-foreground ${!noShadow ? "shadow-md" : null} ${toggle ? "bg-[#17153B]/90" : null} transition-all duration-500`}>
