@@ -49,7 +49,7 @@ const Department = () => {
                             <div className="embla__container">
                             {   DEPARTMENT_INFO.map((item, index) => (
                                     <div className="embla__slide flex justify-center" key={index}>
-                                        <div className="flex-col lg:w-[55vw] p-5 hover:scale-[1.04] transition-all">
+                                        <div className="flex-col lg:w-[55vw] p-5 hover:scale-[1.04] transition-all content-center">
                                             <h1 className={`${font} font-semibold text-5xl text-center pb-5`}>{item.full}</h1>
                                             <p className="text-xl text-justify lg:px-20">{item.description}</p>
                                         </div>
